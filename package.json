@@ -1,0 +1,9 @@
+{
+  "name": "credit-card-2lvl",
+  "scripts": {},
+  "author": "TSH",
+  "dependencies": {
+    "credit-card-input-mask": "^3.0.0",
+    "redom": "^4.0.0"
+  }
+}
