@@ -225,11 +225,16 @@ const mask = [
 
 // функция для смены цвета у карточки
 const swapColor = (color) => {
+  console.log('color: ', color);
   lightcolor.forEach(elem => {
-    elem.className = `lightcolor ${color}`;
+    elem.classList.remove('grey');
+    elem.classList.add(color);
+    // elem.className = `lightcolor ${color}`;
   });
   darkcolor.forEach(elem => {
-    elem.className = `darkcolor ${color}dark`;
+    elem.classList.remove('greydark');
+    elem.classList.add(`${color}dark`);
+    // elem.className = `darkcolor ${color}dark`;
   });
 };
 
@@ -252,8 +257,6 @@ cardnumber.addEventListener('input', () => {
       if (item.regex !== undefined && item.regex.test(cardnumber.value) === true) {
         ccicon.innerHTML = item.icon;
         ccsingle.innerHTML = item.logo;
-        swapColor(item.color);
-      } else if (item.regex === undefined) {
         swapColor(item.color);
       }
     });
